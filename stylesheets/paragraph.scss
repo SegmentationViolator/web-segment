@@ -1,0 +1,11 @@
+.paragraph {
+    * {
+        display: inline;
+    }
+
+    p {
+        font-size: 1.6vmax;
+        hyphens: auto;
+        line-break: loose;
+    }
+}

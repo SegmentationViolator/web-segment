@@ -3,7 +3,6 @@ name = "web-segment"
 version = "0.1.0"
 edition = "2021"
 license = "AGPL-3.0-only"
-license-file = "LICENSE"
 authors = ["Saad Kondvilkar <segmentationviolator@proton.me>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -12,3 +11,7 @@ authors = ["Saad Kondvilkar <segmentationviolator@proton.me>"]
 web-sys = { version = "0.3.61", features = ["Window", "Element", "Document"] }
 yew = { version = "0.20.0", features = ["csr"] }
 yew-router = "0.17.0"
+
+[profile.release]
+lto = true
+opt-level = 'z'

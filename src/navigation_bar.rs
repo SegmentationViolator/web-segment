@@ -40,7 +40,12 @@ pub fn navigation_bar() -> Html {
 
     html! {
         <div class={classes}>
-            <h1>{"Web "}<span onclick={set_segmented}>{"Segment"}</span></h1>
+            <h2>
+                {"Web "}
+                <span onclick={set_segmented}>
+                    {"Segment"}
+                </span>
+            </h2>
             <ui class={classes!("nav-links")}>
                 { pages }
             </ui>

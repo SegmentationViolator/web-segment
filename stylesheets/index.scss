@@ -1,6 +1,7 @@
 @use "animations";
 @use "footer";
 @use "navigation_bar";
+@use "paragraph";
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
@@ -8,8 +9,12 @@
     background: $secondary;
     color: $primary;
 
-    :any-link {
+    a {
         color: $primary;
+
+        &:hover {
+            color: change-color($color: $primary, $lightness: 45%,);
+        }
     }
 
     span {
@@ -26,7 +31,7 @@ html {
     font-family: 'IBM Plex Mono', monospace;
 
     @media (prefers-color-scheme: dark) {
-        @include themed(#fff, #111)
+        @include themed(#fff, #111);
     }
 }
 

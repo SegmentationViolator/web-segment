@@ -17,7 +17,9 @@
 use std::marker;
 
 use yew::prelude::*;
+use yew_router::prelude::*;
 
+use crate::{paragraph::Paragraph, Route};
 
 struct Home;
 
@@ -50,10 +52,34 @@ impl Page<Home> {
     fn view() -> Html {
         html! {
             <>
-                <h3>{"I am,"}</h3>
-                <br/>
-                <h2>{"Saad Kondvilkar"}</h2>
-                <p>{"A.K.A. Segmentation Violator"}</p>
+                <h4>{"I am,"}</h4><br/>
+
+                <h3>{"Saad Kondvilkar"}</h3>
+                <h5>{"A.K.A. Segmentation Violator"}</h5><br/>
+
+                <Paragraph>
+                    <p>
+                        {"I am a hobbyist programmer, my interests in the field of programming are systems programming, graphics programming and web development. "}
+                        {"I like making software that I find interesting, and learn-by-doing"}
+                    </p>
+                </Paragraph><br/>
+
+                <div style="margin: 1em;">
+                    <h4>{"Programming Languages Known To Me:"}</h4>
+                    <ul>
+                        <li>{"Rust"}</li>
+                        <li>{"Python"}</li>
+                    </ul><br/>
+                </div>
+                    
+                <Paragraph>
+                    <p>
+                        {"I have worked on projects like Discord bots, a programming language, an emulator and a text editor. I have listed some on my projects "}
+                        <Link<Route> to={Route::Projects}>{"here"}</Link<Route>>
+                        {" and you can find links to my profiles on various platforms and my E-mail "}
+                        <Link<Route> to={Route::Links}>{"here"}</Link<Route>>
+                        </p>
+                </Paragraph>
             </>
         }
     }
@@ -61,7 +87,17 @@ impl Page<Home> {
 
 impl Page<Links> {
     fn view() -> Html {
-        html!("todo")
+        html! {
+            <ul>
+                <li>
+                    <h4 style="display: inline;">{"Github"}</h4>
+                    <sup><a href="https://github.com/SegmentationViolator">{"[link]"}</a></sup>
+                </li>
+                <li>
+                    <h4 style="display: inline;">{"E-mail: "}</h4><h4 style="display: inline;">{"segmentationviolator@proton.me"}</h4>
+                </li>
+            </ul>
+        }
     }
 }
 

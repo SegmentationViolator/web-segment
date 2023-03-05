@@ -16,14 +16,17 @@
 
 use yew::prelude::*;
 
-#[function_component(Footer)]
-pub fn footer() -> Html {
+#[derive(Clone, PartialEq, Properties)]
+pub struct Props {
+    pub children: Children
+}
+
+#[function_component(Paragraph)]
+pub fn footer(properties: &Props) -> Html {
     html! {
-        <div class="footer">
-            <p>
-                <a href="https://www.rust-lang.org/">{"Made with Crab Lang"} <img src="crab.webp"/></a>
-                <sup><a href="https://github.com/SegmentationViolator/web-segment">{"[source]"}</a></sup>
-            </p>
+        <div class="paragraph">
+            <pre>{"    "}</pre>
+            { for properties.children.iter() }
         </div>
     }
 }

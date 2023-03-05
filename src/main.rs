@@ -22,6 +22,7 @@ use yew_router::prelude::*;
 mod footer;
 mod navigation_bar;
 mod page;
+mod paragraph;
 
 use navigation_bar::NavigationBar;
 use footer::Footer;
@@ -30,10 +31,10 @@ use footer::Footer;
 enum Route {
     #[at("/")]
     Home,
-    #[at("/projects")]
-    Projects,
     #[at("/links")]
     Links,
+    #[at("/projects")]
+    Projects,
 }
 
 impl Route {
@@ -55,8 +56,8 @@ fn app() -> Html {
     yew::html! {
         <div id="App">
             <BrowserRouter>
-                <NavigationBar />
-                <br/>
+                <NavigationBar /><br/>
+
                 <div class="body">
                     <Switch<Route> render={switch} />
                 </div>
