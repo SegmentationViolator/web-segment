@@ -1,0 +1,46 @@
+@use "animations";
+@use "footer";
+@use "navigation_bar";
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+@mixin themed($primary: #111, $secondary: #fff) {
+    background: $secondary;
+    color: $primary;
+
+    :any-link {
+        color: $primary;
+    }
+
+    span {
+        background: $secondary;
+    }
+}
+
+* {
+    margin: 0
+}
+
+html {
+    @include themed;
+    font-family: 'IBM Plex Mono', monospace;
+
+    @media (prefers-color-scheme: dark) {
+        @include themed(#fff, #111)
+    }
+}
+
+sup a {
+    text-decoration-line: none;
+}
+
+#App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    margin: 1em;
+    flex-grow: 1;
+}
